@@ -6,10 +6,15 @@
 
 	public class HomeController : Controller
     {       
-        public ActionResult Index()
+        public ActionResult StandardRedirectToAction()
         {
-			return this.RedirectToAction(x => x.SomewhereElse());
+			return RedirectToAction("SomewhereElse");			
         }
+
+		public ActionResult ContribRedirectToAction()
+		{
+			return this.RedirectToAction(x => x.SomewhereElse());
+		}
 
 		public ActionResult SomewhereElse()
 		{
